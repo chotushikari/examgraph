@@ -1,0 +1,2 @@
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"; import { ReactNode } from "react";
+export function ScrollArea({children,className}:{children:ReactNode;className?:string}){return <ScrollAreaPrimitive.Root className={className}><ScrollAreaPrimitive.Viewport className="h-full w-full">{children}</ScrollAreaPrimitive.Viewport><ScrollAreaPrimitive.Scrollbar orientation="vertical" className="w-2 bg-transparent"><ScrollAreaPrimitive.Thumb className="block rounded-full bg-slate-300"/></ScrollAreaPrimitive.Scrollbar></ScrollAreaPrimitive.Root>}

@@ -1,0 +1,11 @@
+export type Priority = "high" | "medium" | "low";
+export type StudyMode = "deep" | "cram" | "revision";
+export type SubtopicStatus = "not_started" | "in_progress" | "done";
+export type Unit = { id: string; title: string; topics: Topic[] };
+export type Topic = { id: string; title: string; priority: Priority; subtopics: Subtopic[] };
+export type Subtopic = { id: string; title: string; priority: Priority; estimatedTimeMinutes: number; prerequisites: string[]; coreIdea: string; conceptBlocks: ConceptBlock[]; diagrams: Diagram[]; questionPatterns: QuestionPattern[]; memoryTricks: string[]; selfTestQuestions: SelfTestQuestion[] };
+export type ConceptBlock = { id: string; title: string; content: string; examHook?: string; commonMistake?: string };
+export type Diagram = { id: string; caption: string; description: string; examFocus?: string };
+export type QuestionPattern = { type: "definition" | "derivation" | "numerical" | "comparison" | "conceptual"; typicalMarks: string; frequency: Priority; whatTheyTest: string; modelAnswerOutline: string[] };
+export type SelfTestQuestion = { id: string; question: string; answer: string; type: "conceptual" | "application" | "numerical" | "definition" };
+export type ParseUnitResponse = { unit?: Unit; error?: string };

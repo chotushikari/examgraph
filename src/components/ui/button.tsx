@@ -1,0 +1,3 @@
+import { ButtonHTMLAttributes, forwardRef } from "react";
+import { cn } from "@/lib/utils";
+export const Button = forwardRef<HTMLButtonElement, ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "default" | "outline" | "ghost" | "destructive" }>(function Button({ className, variant="default", ...props }, ref) { const styles={default:"bg-ink text-white hover:bg-ink/90",outline:"border border-slate-200 bg-white hover:bg-slate-50",ghost:"hover:bg-slate-100",destructive:"bg-rose-600 text-white hover:bg-rose-700"}; return <button ref={ref} className={cn("inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50",styles[variant],className)} {...props} /> });
